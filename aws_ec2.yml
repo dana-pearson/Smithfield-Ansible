@@ -15,7 +15,7 @@
     aws_secret_key: "pQLQGlZ92+Dz6eG7W9E4BuQC2olCukUMLkKRL232"
   tasks:
     - name: Launch EC2 instance
-      ec2:
+      ec2_instance:
         region: "{{ region }}"
         instance_type: "{{ instance_type }}"
         image: "{{ image_id }}"
