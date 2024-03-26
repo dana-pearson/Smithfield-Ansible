@@ -16,16 +16,16 @@
   tasks:
     - name: Launch EC2 instance
       ec2_instance:
+        #count: 1
         region: "{{ region }}"
         instance_type: "{{ instance_type }}"
-        image: "{{ image_id }}"
+        image_id: "{{ image_id }}"
         key_name: "{{ key_name }}"
-        group: "{{ security_group }}"
+        security_group: "{{ security_group }}"
         vpc_subnet_id: "{{ subnet_id }}"
         aws_access_key: "ASIAT4DQ2KRLNDVB3FHL"
         aws_secret_key: "pQLQGlZ92+Dz6eG7W9E4BuQC2olCukUMLkKRL232"
-        count: 1
-        instance_tags:
+        tags:
           Name: "Ansible_Instance"
       register: ec2_info
 
