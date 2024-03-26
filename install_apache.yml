@@ -3,5 +3,4 @@
   remote_user: ec2-user
   gather_facts: false
   roles:
-    - ec2_apache
     - apache
