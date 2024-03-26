@@ -1,0 +1,31 @@
+---
+- name: Provision EC2 instance
+  hosts: localhost
+  connection: local
+  gather_facts: False
+  vars:
+    region: "us-east-1"
+    instance_type: "t2.micro"
+    image_id: "ami-026ebd4cfe2c043b2"  # Specify your desired AMI ID
+    key_name: "master-danapayer"
+    #security_group: "sg-08c1516cca7db10b9"
+    security_group: "launch-wizard-4"
+    subnet_id: "subnet-0645fbb28946b6a62"
+    aws_access_key: "ASIAT4DQ2KRLNDVB3FHL"
+    aws_secret_key: "pQLQGlZ92+Dz6eG7W9E4BuQC2olCukUMLkKRL232"
+  tasks:
+    - name: Launch EC2 instance
+      ec2:
+        region: "{{ region }}"
+        instance_type: "{{ instance_type }}"
+        image: "{{ image_id }}"
+        key_name: "{{ key_name }}"
+        group: "{{ security_group }}"
+        vpc_subnet_id: "{{ subnet_id }}"
+        aws_access_key: "ASIAT4DQ2KRLNDVB3FHL"
+        aws_secret_key: "pQLQGlZ92+Dz6eG7W9E4BuQC2olCukUMLkKRL232"
+        count: 1
+        instance_tags:
+          Name: "Ansible_Instance"
+      register: ec2_info
+
