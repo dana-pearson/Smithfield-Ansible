@@ -1,6 +1,6 @@
 ---
 - name: Demo playbook to test callback plugin - Deployment
-  #hosts: Ansible_Instance
+  hosts: 
   tasks:
     
     - name: Install httpd package
