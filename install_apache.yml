@@ -13,12 +13,13 @@
         name: httpd
         enabled: true
         state: started
+        become: true
 
-#    - name: Create a custom index.html file
-#      copy:
-#        dest: /var/www/html/index.html
-#        content: |
-#          Enable SysAdmin Demo:
-#          Ansible Profiling with Callback Plugin
-#          Custom Web Page
-#EOF
+    - name: Create a custom index.html file
+      copy:
+        dest: /var/www/html/index.html
+        content: |
+          Enable SysAdmin Demo:
+          Ansible Profiling with Callback Plugin
+          Custom Web Page
+EOF
