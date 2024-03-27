@@ -6,7 +6,8 @@
   vars:
     region: "us-east-1"
     instance_type: "t2.micro"
-    image_id: "ami-026ebd4cfe2c043b2"  # Specify your desired AMI ID
+    #image_id: "ami-026ebd4cfe2c043b2"  # Redhat
+    image_id: "ami-0c101f26f147fa7fd"  # Amazon Linux
     key_name: "master-danapayer"
     #security_group: "sg-08c1516cca7db10b9"
     security_group: "launch-wizard-4"
