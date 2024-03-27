@@ -7,14 +7,14 @@
       dnf:
         name: httpd
         state: latest
-        become: true
+      become: true
     
     - name: Start and enable httpd service
       service:
         name: httpd
         enabled: true
         state: started
-        become: true
+      become: true
 
 #    - name: Create a custom index.html file
 #      copy:
