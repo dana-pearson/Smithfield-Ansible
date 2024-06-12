@@ -12,8 +12,8 @@
     #security_group: "sg-08c1516cca7db10b9"
     security_group: "launch-wizard-4"
     subnet_id: "subnet-0645fbb28946b6a62"
-    aws_access_key: "ASIAT4DQ2KRLNDVB3FHL"
-    aws_secret_key: "pQLQGlZ92+Dz6eG7W9E4BuQC2olCukUMLkKRL232"
+    aws_access_key: "{{ aws_access_key }}"
+    aws_secret_key: "{{ aws_secret_key }}"
   tasks:
     - name: Launch EC2 instance
       amazon.aws.ec2_instance:
@@ -24,8 +24,8 @@
         key_name: "{{ key_name }}"
         security_group: "{{ security_group }}"
         vpc_subnet_id: "{{ subnet_id }}"
-        aws_access_key: "ASIAT4DQ2KRLNDVB3FHL"
-        aws_secret_key: "pQLQGlZ92+Dz6eG7W9E4BuQC2olCukUMLkKRL232"
+        aws_access_key: "{{ aws_access_key }}"
+        aws_secret_key: "{{ aws_secret_key }}"
         tags:
           Name: "Ansible_Instance"
       register: ec2_info
